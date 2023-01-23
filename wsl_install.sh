@@ -2,6 +2,7 @@ sudo apt-get update
 sudo apt-get -y install git curl unzip build-essential autoconf m4 libncurses5-dev libwxgtk3.0-gtk3-dev libwxgtk-webview3.0-gtk3-dev libgl1-mesa-dev libglu1-mesa-dev libpng-dev libssh-dev unixodbc-dev xsltproc fop libxml2-utils libncurses-dev openjdk-11-jdk inotify-tools 
 
 sudo chmod 755 ~ 
+cd ~
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.2 
 source ~/.asdf/asdf.sh 
 printf '\nsource ~/.asdf/asdf.sh' >> ~/.bashrc 
@@ -38,10 +39,13 @@ asdf reshim
 rustc --version 
 
 [ ! -f ~/.ssh/id_ed25519.pub ]  ssh-keygen -t ed25519 -N '' -f ~/.ssh/id_ed25519
-printf "\nCopy this ssh key to gitlab. Make sure you copy the entire line. To continue with install press Enter\n"
+printf "\nCopy this ssh key to gitlab. Make sure you copy the entire line. To continue with install enter 'done' and press enter\n"
 cat ~/.ssh/id_ed25519.pub
 printf "\n"
-read -p ""
+while [ "$REPLY" != "done" ]
+do
+    read
+done
 
 cd ~
 git clone git@gitlab.com:trixta/platform/trixta_space.git

@@ -58,9 +58,10 @@ git submodule update --init --recursive
 mix deps.get
 cd assets && npm install && cd ..
 
-sudo mkdir /var/lib/trixta/mnesia
-sudo chmod -R 777 /var/lib/trixta/mnesia
 sudo mkdir /var/lib/trixta
 sudo chown $USER /var/lib/trixta
+
+sudo mkdir /var/lib/trixta/mnesia
+sudo chown $USER /var/lib/trixta/mnesia
 
 printf '\nsource ~/trixta_space/.envrc' >> ~/.bashrc

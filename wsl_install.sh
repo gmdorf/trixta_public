@@ -44,7 +44,7 @@ cat ~/.ssh/id_ed25519.pub
 printf "\n"
 while [ "$REPLY" != "done" ]
 do
-    read
+    read REPLY
 done
 
 cd ~

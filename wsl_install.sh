@@ -38,7 +38,7 @@ asdf global rust latest
 asdf reshim 
 rustc --version 
 
-[ ! -f ~/.ssh/id_ed25519.pub ]  ssh-keygen -t ed25519 -N '' -f ~/.ssh/id_ed25519
+[ ! -f ~/.ssh/id_ed25519.pub ] && ssh-keygen -t ed25519 -N '' -f ~/.ssh/id_ed25519
 printf "\nCopy this ssh key to gitlab. Make sure you copy the entire line. To continue with install enter 'done' and press enter\n"
 cat ~/.ssh/id_ed25519.pub
 printf "\n"

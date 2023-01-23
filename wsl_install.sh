@@ -5,7 +5,11 @@ sudo chmod 755 ~
 cd ~
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.2 
 source ~/.asdf/asdf.sh 
-printf '\nsource ~/.asdf/asdf.sh' >> ~/.bashrc 
+printf '\nsource ~/.asdf/asdf.sh' >> ~/.bashrc
+printf '\nsource ~/.asdf/completions/asdf.bash' >> ~/.bashrc
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
+source ~/.bashrc
 
 asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git 
 asdf install nodejs latest:16 
